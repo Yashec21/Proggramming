@@ -1,31 +1,31 @@
 #include<stdio.h>
 
-#include<stdio.h>
-
-void DisplayConvert(char CValue)
+void DisplayEvenFactor(int iNo)
 {
-    if((CValue >= 65) && (CValue <= 90))
-    {
-       printf("%c",CValue + 32);
-    }
-    else if((CValue >= 97) && (CValue <= 122))
-    {
-       printf("%c",CValue - 32);
-    }
-    
+    int i = 0;
+     if (iNo <= 0)
+     {
+        iNo = -iNo;
+     }
 
+     for (i = 1; i <= iNo; i++)
+     {
+        if((iNo % i == 0) && (i % 2 ==0))
+        {
+            printf("%d",i);
+        }
+     }
 }
 
 int main()
 {
+    int iValue = 0;
 
-    char cValue = '\0';
+    printf("Enter number\n");
+    scanf("%d",&iValue);
 
-    printf("Enter charachter\n");
-    scanf("%c",&cValue);
+    DisplayEvenFactor(iValue);
 
-    DisplayConvert(cValue);
 
     return 0;
-
 }
